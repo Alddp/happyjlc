@@ -57,7 +57,7 @@ jobs:
         run: npm exec tauri -- build --target "${{ matrix.target }}" --bundles "${{ matrix.bundle }}"
 
       - name: Upload desktop bundle
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: happyjlc-desktop-${{ matrix.target }}
           path: target/${{ matrix.target }}/release/bundle/${{ matrix.bundle }}/*
@@ -101,7 +101,7 @@ jobs:
         run: cargo build -p happyjlc-cli --release --target "${{ matrix.target }}"
 
       - name: Upload CLI
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: happyjlc-cli-${{ matrix.target }}
           path: target/${{ matrix.target }}/release/${{ matrix.binary }}
